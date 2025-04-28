@@ -1,0 +1,211 @@
+[1mdiff --git a/src/main/java/com/pluralsight/AccountingLedgerApp.java b/src/main/java/com/pluralsight/AccountingLedgerApp.java[m
+[1mindex 2af1048..9513695 100644[m
+[1m--- a/src/main/java/com/pluralsight/AccountingLedgerApp.java[m
+[1m+++ b/src/main/java/com/pluralsight/AccountingLedgerApp.java[m
+[36m@@ -1,8 +1,127 @@[m
+ package com.pluralsight;[m
+ [m
+[32m+[m[32mimport java.io.*;[m
+[32m+[m[32mimport java.time.LocalDate;[m
+[32m+[m[32mimport java.time.LocalTime;[m
+[32m+[m[32mimport java.util.Scanner;[m
+[32m+[m[32mimport java.time.format.DateTimeFormatter;[m
+[32m+[m
+ public class AccountingLedgerApp {[m
+ [m
+[32m+[m[32m    // importing static scanner to read user input[m
+[32m+[m[32m    // static = it belongs to class itself, not a specific object[m
+[32m+[m[32m    static Scanner theScanner = new Scanner(System.in);[m
+[32m+[m[32m    // file name for the transactions[m
+[32m+[m[32m    static String ledgerFile = "transactions.csv";[m
+[32m+[m[32m    // creating date and time formatters[m
+[32m+[m[32m    static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMM-dd-yyyy");[m
+[32m+[m[32m    static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");[m
+[32m+[m
+     public static void main(String[] args) {[m
+[31m-        [m
+[32m+[m
+[32m+[m[32m        // creating home page[m
+[32m+[m[32m        System.out.println("\nWelcome to the Account Ledger!");[m
+[32m+[m[32m        System.out.println("Please choose one of the following options: (D, P, L, or X)");[m
+[32m+[m[32m        System.out.println("-------------------------------------------");[m
+[32m+[m[32m        System.out.println("(D) - Add a Deposit");[m
+[32m+[m[32m        System.out.println("(P) - Make a Payment (Debit)");[m
+[32m+[m[32m        System.out.println("(L) - View Ledger");[m
+[32m+[m[32m        System.out.println("(X) - Exit");[m
+[32m+[m
+[32m+[m[32m        // declaring variable to store user input[m
+[32m+[m[32m        String userInput;[m
+[32m+[m[32m        // declaring variable to store the letter choice[m
+[32m+[m[32m        String choice = "";[m
+[32m+[m[32m        // declaring variable to indicate if user wants to exit program, starts as false[m
+[32m+[m[32m        boolean willExit = false;[m
+[32m+[m
+[32m+[m[32m        // creating while loop that will continue to run until user submits in a valid choice or chooses to exit[m
+[32m+[m[32m        while(!willExit) {[m
+[32m+[m[32m            // prompts user for input[m
+[32m+[m[32m            System.out.print("Enter choice: ");[m
+[32m+[m[32m            // reads the entire line entered by user and stores it in "userInput"[m
+[32m+[m[32m            userInput = theScanner.nextLine();[m
+[32m+[m[32m            System.out.println("-------------------------------------------");[m
+[32m+[m
+[32m+[m[32m            // checking if user entered in letter "D"[m
+[32m+[m[32m            switch (userInput.trim().toUpperCase()) {[m
+[32m+[m[32m                // stores the valid choice[m
+[32m+[m[32m                case "D":[m
+[32m+[m[32m                    choice = "D";[m
+[32m+[m[32m                // this line will run when user chooses this option[m
+[32m+[m[32m                    System.out.println("You selected option D: Add a Deposit. Now loading option D...");[m
+[32m+[m[32m                    addTransaction(choice);[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case "P":[m
+[32m+[m[32m                    choice = "P";[m
+[32m+[m[32m                    System.out.println("You selected option P: Make Payment (Debit). Now loading option P...");[m
+[32m+[m[32m                    addTransaction(choice);[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case "L":[m
+[32m+[m[32m                    choice = "L";[m
+[32m+[m[32m                    System.out.println("You selected option L: View Ledger. Now loading option P...");[m
+[32m+[m[32m                    displayLedger();[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case "X":[m
+[32m+[m[32m                    willExit = true;[m
+[32m+[m[32m                    System.out.println("You selected option X. Now exiting the system. Goodbye! ");[m
+[32m+[m[32m                    break;[m
+[32m+[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m
+     }[m
+[32m+[m[32m    private static void addTransaction(String transactionType) {[m
+[32m+[m[32m        System.out.println("Enter information below:");[m
+[32m+[m
+[32m+[m[32m        System.out.print("Description: ");[m
+[32m+[m[32m        String description = theScanner.nextLine();[m
+[32m+[m
+[32m+[m[32m        System.out.print("Vendor: ");[m
+[32m+[m[32m        String vendor = theScanner.nextLine();[m
+[32m+[m
+[32m+[m[32m        System.out.print("Amount: ");[m
+[32m+[m[32m        double amount;[m
+[32m+[m[32m        // reading amount as string first[m
+[32m+[m[32m        double amountStr = theScanner.nextDouble();[m
+[32m+[m[32m        try {[m
+[32m+[m[32m            amount = Double.parseDouble(String.valueOf(amountStr));[m
+[32m+[m[32m        } catch (Exception e) {[m
+[32m+[m[32m            System.out.println("Invalid amount format. Transaction not added.");[m
+[32m+[m[32m            return;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        // get current date and time[m
+[32m+[m[32m        LocalDate date = LocalDate.now();[m
+[32m+[m[32m        LocalTime time = LocalTime.now();[m
+[32m+[m[32m        Transactions transaction = new Transactions(date, time, description, vendor, amount);[m
+[32m+[m
+[32m+[m[32m        try (PrintWriter pw = new PrintWriter(new FileWriter(ledgerFile, true))) {[m
+[32m+[m[32m            // format the transaction data and write it to the file[m
+[32m+[m[32m            pw.printf("%s | %s | %s | %s | %.2f | %s%n",[m
+[32m+[m[32m                    transaction.getDate().format(dateFormatter),[m
+[32m+[m[32m                    transaction.getTime().format(timeFormatter),[m
+[32m+[m[32m                    transaction.getDescription(),[m
+[32m+[m[32m                    transaction.getVendor(),[m
+[32m+[m[32m                    transaction.getAmount(),[m
+[32m+[m[32m                    transactionType);[m
+[32m+[m[32m            System.out.print("Added to ledger. What would you like to do next? ");[m
+[32m+[m[32m        } catch (Exception e) {[m
+[32m+[m[32m            System.out.print("Error writing to file. Error message: " + e.getMessage());[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m    } private static void displayLedger() {[m
+[32m+[m[32m        System.out.println("\nLedger: ");[m
+[32m+[m[32m        // code to read from the file and display[m
+[32m+[m[32m        try (BufferedReader buffReader = new BufferedReader(new FileReader(ledgerFile))) {[m
+[32m+[m[32m            String line;[m
+[32m+[m[32m            while ((line = buffReader.readLine()) != null) {[m
+[32m+[m[32m                System.out.println(line);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        } catch (Exception e) {[m
+[32m+[m[32m            System.out.print("Error reading the ledger file: " + e.getMessage());[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+ }[m
+[1mdiff --git a/src/main/java/com/pluralsight/Transactions.java b/src/main/java/com/pluralsight/Transactions.java[m
+[1mindex 0214ea4..060bb06 100644[m
+[1m--- a/src/main/java/com/pluralsight/Transactions.java[m
+[1m+++ b/src/main/java/com/pluralsight/Transactions.java[m
+[36m@@ -1,4 +1,66 @@[m
+ package com.pluralsight;[m
+ [m
+[32m+[m[32m// importing date and time[m
+[32m+[m[32mimport java.time.LocalDate;[m
+[32m+[m[32mimport java.time.LocalTime;[m
+[32m+[m
+ public class Transactions {[m
+[32m+[m
+[32m+[m[32m    // "private" properties for the requested format in transactions.csv[m
+[32m+[m[32m    // date|time|description|vendor|amount[m
+[32m+[m[32m    private LocalDate date;[m
+[32m+[m[32m    private LocalTime time;[m
+[32m+[m[32m    private String description;[m
+[32m+[m[32m    private String vendor;[m
+[32m+[m[32m    private double amount;[m
+[32m+[m
+[32m+[m[32m    // creating constructors for the objects[m
+[32m+[m[32m    public Transactions(LocalDate date, LocalTime time, String description, String vendor, double amount) {[m
+[32m+[m[32m        this.date = date;[m
+[32m+[m[32m        this.time = time;[m
+[32m+[m[32m        this.description = description;[m
+[32m+[m[32m        this.vendor = vendor;[m
+[32m+[m[32m        this.amount = amount;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // creating getters and setters[m
+[32m+[m[32m    public LocalDate getDate() {[m
+[32m+[m[32m        return date;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setDate(LocalDate date) {[m
+[32m+[m[32m        this.date = date;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public LocalTime getTime() {[m
+[32m+[m[32m        return time;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setTime(LocalTime time) {[m
+[32m+[m[32m        this.time = time;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getDescription() {[m
+[32m+[m[32m        return description;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setDescription(String description) {[m
+[32m+[m[32m        this.description = description;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getVendor() {[m
+[32m+[m[32m        return vendor;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setVendor(String vendor) {[m
+[32m+[m[32m        this.vendor = vendor;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public double getAmount() {[m
+[32m+[m[32m        return amount;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setAmount(double amount) {[m
+[32m+[m[32m        this.amount = amount;[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/src/main/resources/transactions.csv b/src/main/resources/transactions.csv[m
+[1mindex e69de29..b382e5f 100644[m
+[1m--- a/src/main/resources/transactions.csv[m
+[1m+++ b/src/main/resources/transactions.csv[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mdate|time|description|vendor|amount[m
+\ No newline at end of file[m
