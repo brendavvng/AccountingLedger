@@ -8,17 +8,17 @@ This is a simple accounting ledger application built in Java. It allows users to
 ### Home Screen
 
 
-![Home Screen Image](images/AccountingLedger_HomeScreen.png)
+<img src="images/AccountingLedger_HomeScreen.png" width="300" />
 
 ### Transactions
 
 DEPOSITS.
 
-<img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="500" />
+<img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="300" />
 
 PAYMENTS.
 
-<img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="500" />
+<img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="300" />
 
 ## Interesting Code Snippet
 
