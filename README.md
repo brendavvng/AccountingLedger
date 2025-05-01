@@ -1,6 +1,7 @@
 README Template:
 
-
+![Ledger Screenshot](images/your_screenshot.png)
+\
 # Brenda's Accounting Ledger App
 
 This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
