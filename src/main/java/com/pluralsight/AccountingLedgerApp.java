@@ -33,6 +33,8 @@ public class AccountingLedgerApp {
             displayHomeScreen();
             System.out.print("Enter choice: ");
             // scanner reads and process user input
+            // .trim() method removes any extra spaces before and after the text (string)
+            // .toUpperCase() method converts all the letters in a string to uppercase.
             String userInput = theScanner.nextLine().trim().toUpperCase();
             System.out.println("-------------------------------------------");
             try {
