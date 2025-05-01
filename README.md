@@ -1,11 +1,11 @@
 README Template:
 
 
-# My Accounting Ledger App
+# Brenda's Accounting Ledger App
 
 This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
 
-## 💻 Screenshots
+## Screenshots
 
 ### Main Menu
 ![Main Menu](screenshots/main-menu.png)
@@ -13,9 +13,9 @@ This is a simple accounting ledger application built in Java. It allows users to
 ### Add Transaction
 ![Add Transaction](screenshots/add-transaction.png)
 
-> 📸 Place your screenshots in a `screenshots/` folder in your repo and link to them like above.
+> Place your screenshots in a `screenshots/` folder in your repo and link to them like above.
 
-## 🧠 Interesting Code Snippet
+## Interesting Code Snippet
 
 Here’s one part of the project I’m proud of—how transactions are parsed from a line in a CSV file:
 
