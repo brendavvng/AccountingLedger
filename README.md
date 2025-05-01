@@ -4,33 +4,63 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ### Home Screen
 
-<p align="center">
-  <img src="images/AccountingLedger_HomeScreen.png" width="400" />
-</p>
+<table>
+  <tr>
+    <td align="center" width="1000">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_HomeScreen.png?raw=true" width="380"/><br/>
+      <sub><i>Displays home screen options</i></sub>
+</table>
 
 ### Ledger Screen
-<p align="center">
-  <img src="images/AccountingLedger_LedgerScreen.png" width="400" />
-</p>
 
-### Ledger Screen - All Options 
-<p align="center">
-  <img src="images/AccountingLedger_LedgerScreen_AllOption.png" width="400" />
-</p>
-  
-### Transactions Screen
+<table>
+  <tr>
+    <td align="center" width="500">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_LedgerScreen.png?raw=true" width="450" height=300"/><br/>
+      <sub><i>Displays the Ledger options</i></sub>
+    </td>
+<td align="center" width="500">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_LedgerScreen_AllOption.png?raw=true" width="450"/><br/>
+      <sub><i>Displays the ALL of the Ledger entries</i></sub>
+   </td>
+  </tr>
+</table>
 
-<p align="center">
-  <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="450" />
-  <img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="450" />
-</p>
+
+### Transactions Screens
+
+
+<table>
+  <tr>
+    <td align="center" width="500">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_LedgerScreen_DepositOption.png?raw=true" width="450"/><br/>
+      <sub><i>Displays all of the deposits only</i></sub>
+    </td>
+<td align="center" width="500">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_LedgerScreen_PaymentOption.png?raw=true" width="450" height="455"/><br/>
+      <sub><i>Displays all of the payments only</i></sub>
+   </td>
+  </tr>
+</table>
 
 
 ### Report Screen
 
-<p align="center">
-  <img src="images/AccountingLedger_ReportScreen.png" height="300" />
-</p>
+<table>
+  <tr>
+    <td align="center" width="1000">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_ReportScreen.png?raw=true" width="380"/><br/>
+      <sub><i>Displays report menu options</i></sub>
+</table>
+
+### Exit System
+
+<table>
+  <tr>
+    <td align="center" width="1000">
+      <img src="https://github.com/brendavvng/AccountingLedger/blob/main/images/AccountingLedger_ExitSystem.png?raw=true" width="380"/><br/>
+      <sub><i>Displays the exit screen when user decides to exit the system</i></sub>
+</table>
 
 
 ## Interesting Code Snippet
