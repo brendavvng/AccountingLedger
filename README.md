@@ -32,7 +32,7 @@ This is a simple accounting ledger application built in Java. It allows users to
 ### Report Screen
 
 <p align="center">
-  <img src="images/AccountingLedger_ReportScreen.png" width="400" height="450" />
+  <img src="images/AccountingLedger_ReportScreen.png" width="400" />
 </p>
 
 
