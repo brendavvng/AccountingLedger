@@ -8,10 +8,9 @@ This is a simple accounting ledger application built in Java. It allows users to
 ## Screenshots
 
 ### Main Menu
-![Main Menu](screenshots/main-menu.png)
+
 
 ### Add Transaction
-![Add Transaction](screenshots/add-transaction.png)
 
 > Place your screenshots in a `screenshots/` folder in your repo and link to them like above.
 
