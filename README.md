@@ -5,14 +5,14 @@ README Template:
 
 This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
 
-### Home Screen
-
-
+<p align="center">
+  ### Home Screen
 <img src="images/AccountingLedger_HomeScreen.png" width="300" />
+</p>p>
 
-### Transactions
 
 <p align="center">
+  ### Transactions
   <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="450" />
   <img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="450" />
 </p>
