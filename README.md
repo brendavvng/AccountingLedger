@@ -12,16 +12,16 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ### Transactions
 
-<p float="left" tyle="text-align:center; margin-right: 20px;">
-    <strong>Deposits Screen</strong><br />
-<img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="400" />
-</p>
-
-<p float="left" style="text-align:center;">
-  <strong>Payments Screen</strong><br />
-<img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="400" />
-</p>
-
+<table>
+  <tr>
+    <strong></strong><th>Deposits Screen</th><br />
+    <th>Payments Screen</th>
+  </tr>
+  <tr>
+<td></td><img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="400" />
+<td></td><img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="400" />
+  </tr>
+</table>
 
 ## Interesting Code Snippet
 
