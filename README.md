@@ -13,8 +13,8 @@ This is a simple accounting ledger application built in Java. It allows users to
 ### Transactions
 
 <p align="center">
-  <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="350" height="350" />
-  <img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="350" height="350" />
+  <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="450" />
+  <img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="450" />
 </p>
 
 ## Interesting Code Snippet
