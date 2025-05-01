@@ -12,9 +12,10 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ![Home Screen Image](images/AccountingLedger_HomeScreen.png)
 
-### Add Transaction
+### Transactions
+# Deposits
 
-> Place your screenshots in a `screenshots/` folder in your repo and link to them like above.
+![Home Screen Image](AccountingLedger_LedgerScreen_DepositOption.png)
 
 ## Interesting Code Snippet
 
