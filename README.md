@@ -22,7 +22,7 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ### Ledger
 <p align="center">
-  <img src="images/AccountingLedger_LedgerScreen.png" width="400" height="450" />
+  <img src="images/AccountingLedger_LedgerScreen.png" width="400" />
 </p>
 
 ## Interesting Code Snippet
