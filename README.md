@@ -19,7 +19,25 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 Here’s one part of the project I’m proud of—how transactions are parsed from a line in a CSV file:
 
-```java
-double amount = Double.parseDouble(parts[4].trim()); // Parse the amount
+private static void generateMonthToDateReport() {
+    System.out.println("\nMonth To Date Report:");
+    LocalDate now = LocalDate.now();
 
-This line safely extracts the transaction amount from a CSV line after trimming whitespace. If the data format is off, it throws a clear NumberFormatException, which helps with debugging.
+    List<Transactions> mtdTransactions = loadTransactions().stream()
+        .filter(transaction -> transaction.getDate().getYear() == now.getYear()
+            && transaction.getDate().getMonth() == now.getMonth())
+        .collect(Collectors.toList());
+
+    displayTransactions(mtdTransactions);
+}
+
+
+## This explains:
+
+loadTransactions() loads all the transactions from a file.
+
+.stream() turns the list into a stream for processing.
+
+.filter(...) narrows the results to only the current month and year.
+
+.collect(Collectors.toList()) converts the stream back into a List for display.
