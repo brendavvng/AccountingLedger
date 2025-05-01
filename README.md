@@ -11,23 +11,29 @@ This is a simple accounting ledger application built in Java. It allows users to
   <img src="images/AccountingLedger_HomeScreen.png" width="400" />
 </p>
 
-### Ledger
+### Ledger Screen
 <p align="center">
   <img src="images/AccountingLedger_LedgerScreen.png" width="400" />
 </p>
 
-### Ledger - All Options 
+### Ledger Screen - All Options 
 <p align="center">
   <img src="images/AccountingLedger_LedgerScreen_AllOption.png" width="400" />
 </p>
   
-### Transactions 
+### Transactions Screen
 
 <p align="center">
   <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="450" />
   <img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="450" />
 </p>
 
+
+### Report Screen
+
+<p align="center">
+  <img src="images/AccountingLedger_ReportScreen.png" width="400" height="450" />
+</p>
 
 
 ## Interesting Code Snippet
