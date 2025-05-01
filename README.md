@@ -1,4 +1,4 @@
-# Brenda's Accounting Ledger App
+<h1 align="center">Brenda's Accounting Ledger App</h1>
 
 This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
 
