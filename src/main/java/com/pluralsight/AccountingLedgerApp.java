@@ -1,14 +1,14 @@
 package com.pluralsight;
 
-import java.io.*;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
-import java.time.format.DateTimeFormatter;
-import java.util.stream.Collectors;
+import java.io.*; // for input and output operations (e.g., file reading/writing)
+import java.time.LocalDate; // for working with dates
+import java.time.LocalTime; // for working with times
+import java.util.ArrayList; // A flexible container for storing a list of items
+import java.util.Comparator; // for defining how to compare objects (for sorting)
+import java.util.List; // a collection of objects in a list form
+import java.util.Scanner; // for reading user input
+import java.time.format.DateTimeFormatter; // for formatting dates and times into strings
+import java.util.stream.Collectors; // for collecting results from streams, like filtering data
 
 public class AccountingLedgerApp {
 
