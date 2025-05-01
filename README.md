@@ -7,7 +7,9 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ### Home Screen
 
-<img src="images/AccountingLedger_HomeScreen.png" width="400" />
+<p align="center">
+  <img src="images/AccountingLedger_HomeScreen.png" width="400" />
+</p>
 
   
 ### Transactions 
