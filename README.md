@@ -15,6 +15,8 @@ This is a simple accounting ledger application built in Java. It allows users to
 ### Transactions
 # Deposits
 
+<img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="500" />
+
 ![Deposit Screen Image](images/AccountingLedger_LedgerScreen_DepositOption.png)
 
 ## Interesting Code Snippet
