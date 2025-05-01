@@ -19,6 +19,12 @@ This is a simple accounting ledger application built in Java. It allows users to
   <img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="450" />
 </p>
 
+
+### Ledger
+<p align="center">
+  <img src="AccountingLedger_LedgerScreen.png" width="400" height="450" />
+</p>
+
 ## Interesting Code Snippet
 
 Here’s one part of the project I’m proud of—how transactions are parsed from a line in a CSV file:
