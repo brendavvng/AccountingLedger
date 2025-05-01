@@ -11,6 +11,15 @@ This is a simple accounting ledger application built in Java. It allows users to
   <img src="images/AccountingLedger_HomeScreen.png" width="400" />
 </p>
 
+### Ledger
+<p align="center">
+  <img src="images/AccountingLedger_LedgerScreen.png" width="400" />
+</p>
+
+### Ledger - All Options 
+<p align="center">
+  <img src="images/AccountingLedger_LedgerScreen_AllOption.png" width="400" />
+</p>
   
 ### Transactions 
 
@@ -20,10 +29,6 @@ This is a simple accounting ledger application built in Java. It allows users to
 </p>
 
 
-### Ledger
-<p align="center">
-  <img src="images/AccountingLedger_LedgerScreen.png" width="400" />
-</p>
 
 ## Interesting Code Snippet
 
