@@ -18,8 +18,8 @@ This is a simple accounting ledger application built in Java. It allows users to
     <th>Payments Screen</th>
   </tr>
   <tr>
-<td></td><img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="400" />
-<td></td><img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="400" />
+<td></td><img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="350" height="350" />
+<td></td><img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="350" height="350" />
   </tr>
 </table>
 
