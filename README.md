@@ -14,11 +14,11 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 DEPOSITS.
 
-<img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="300" />
+<img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="600" />
 
 PAYMENTS.
 
-<img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="300" />
+<img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="400" height="600" />
 
 ## Interesting Code Snippet
 
