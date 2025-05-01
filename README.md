@@ -13,7 +13,8 @@ This is a simple accounting ledger application built in Java. It allows users to
 ![Home Screen Image](images/AccountingLedger_HomeScreen.png)
 
 ### Transactions
-### Deposits
+
+DEPOSITS
 
 <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="500" />
 
