@@ -7,11 +7,10 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ### Home Screen
 
-<p align="center">
+<img src="images/AccountingLedger_HomeScreen.png" width="400" />
+
   
 ### Transactions 
-
-</p>
 
 <p align="center">
   <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="400" height="450" />
