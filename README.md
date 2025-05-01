@@ -5,8 +5,6 @@ README Template:
 
 This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
 
-## Screenshots
-
 ### Home Screen
 
 
@@ -14,10 +12,13 @@ This is a simple accounting ledger application built in Java. It allows users to
 
 ### Transactions
 
-DEPOSITS
+DEPOSITS.
 
 <img src="images/AccountingLedger_LedgerScreen_DepositOption.png" width="500" />
 
+PAYMENTS.
+
+<img src="images/AccountingLedger_LedgerScreen_PaymentOption.png" width="500" />
 
 ## Interesting Code Snippet
 
