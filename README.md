@@ -10,7 +10,7 @@ This is a simple accounting ledger application built in Java. It allows users to
 ### Home Screen
 
 
-![Home Screen Image](images/AccountingLedger - HomeScreen.png)
+![Home Screen Image](images/AccountingLedger_HomeScreen.png)
 
 ### Add Transaction
 
