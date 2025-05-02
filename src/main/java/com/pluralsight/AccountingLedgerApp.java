@@ -207,7 +207,6 @@ public class AccountingLedgerApp {
         return transactions;
     }
 
-    // This method displays all transactions in the ledger
     // displays a list of transactions
     private static void displayTransactions(List<Transactions> transactions) {
         if (transactions.isEmpty()) {
@@ -233,7 +232,6 @@ public class AccountingLedgerApp {
     }
     // displays all the transactions in the ledger
     private static void displayAllEntries() {
-        // displays all transactions
         System.out.println("All Ledger Entries:");
         // load all transactions
         List<Transactions> allTransactions = loadTransactions();
@@ -243,7 +241,6 @@ public class AccountingLedgerApp {
 
     // displays only deposit transactions
     private static void displayDeposits() {
-        // displays only deposit transactions
         System.out.println("\nDeposits:");
         // load the list of transactions & convert list into a stream, allowing functional operations to be performed on the data
         List<Transactions> deposits = loadTransactions().stream()
@@ -257,7 +254,6 @@ public class AccountingLedgerApp {
 
     // displays payment (debit) transactions
     private static void displayPayments() {
-        // displays only payment transactions
         System.out.println("\nPayments (Debits):");
         // load the list of transactions & convert list into a stream
         List<Transactions> payments = loadTransactions().stream()
@@ -271,7 +267,6 @@ public class AccountingLedgerApp {
 
     // displaying ledger screen and it's options that user will choose from
     private static void displayLedgerScreen() {
-        // displays the ledger screen options
         String ledgerChoice;
         boolean backToHome = false;
         while (!backToHome) {
@@ -309,7 +304,7 @@ public class AccountingLedgerApp {
         }
     }
 
-    // displays the reports menu options
+
     private static void displayReportsMenu() {
         // displays the reports menu options
         String reportChoice;
@@ -358,27 +353,30 @@ public class AccountingLedgerApp {
         }
     }
 
-    // generates and displays the Month-to-Date report
+    // generates and displays the month-to-date report
     private static void generateMonthToDateReport() {
-        // generates and displays the month-to-date report
         System.out.println("\nMonth To Date Report:");
+        // getting today's date
         LocalDate now = LocalDate.now();
+        // load all the saved transactions and filter them to only keep the ones from the current month and year
         List<Transactions> mtdTransactions = loadTransactions().stream()
+                // check if the transaction's year and month match today's year and month
                 .filter(transaction -> transaction.getDate().getYear() == now.getYear() &&
                         // filter transactions for the current month
                         transaction.getDate().getMonth() == now.getMonth())
+                // collect the filtered results into a new list
                 .collect(Collectors.toList());
         // display the Month-to-Date transactions
         displayTransactions(mtdTransactions);
     }
 
-    // generates and displays the Previous Month's report
+    // generates and displays the previous month report
     private static void generatePreviousMonthReport() {
-        // generates and displays the previous month report
         System.out.println("\nPrevious Month Report:");
         LocalDate now = LocalDate.now();
         // calculate the previous month
         LocalDate previousMonth = now.minusMonths(1);
+        // filter transactions to only those from the previous month and same year
         List<Transactions> previousMonthTransactions = loadTransactions().stream()
                 .filter(transaction -> transaction.getDate().getYear() == previousMonth.getYear() &&
                         // filter transactions for the previous month
@@ -388,11 +386,11 @@ public class AccountingLedgerApp {
         displayTransactions(previousMonthTransactions);
     }
 
-    // generates and displays the Year-to-Date report
+    // generates and displays the year-to-date report
     private static void generateYearToDateReport() {
-        // generates and displays the year-to-date report
         System.out.println("\nYear To Date Report:");
         LocalDate now = LocalDate.now();
+        // filter transactions that happened this year
         List<Transactions> ytdTransactions = loadTransactions().stream()
                 // filter transactions for the current year
                 .filter(transaction -> transaction.getDate().getYear() == now.getYear())
@@ -401,9 +399,8 @@ public class AccountingLedgerApp {
         displayTransactions(ytdTransactions);
     }
 
-    // generates and displays the Previous Year's report
+    // generates and displays the previous year report
     private static void generatePreviousYearReport() {
-        // generates and displays the previous year report
         System.out.println("\nPrevious Year Report:");
         LocalDate now = LocalDate.now();
         List<Transactions> previousYearTransactions = loadTransactions().stream()
@@ -416,7 +413,6 @@ public class AccountingLedgerApp {
 
     // searches for transactions by vendor and displays the results
     private static void searchByVendor() {
-        // searches for transactions by vendor and displays the results
         System.out.print("Enter vendor name to search: ");
         // get vendor name input from user
         String vendorName = theScanner.nextLine().trim().toLowerCase();
