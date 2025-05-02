@@ -411,6 +411,8 @@ public class AccountingLedgerApp {
         displayTransactions(previousYearTransactions);
     }
 
+
+    
     // searches for transactions by vendor and displays the results
     private static void searchByVendor() {
         System.out.print("Enter vendor name to search: ");
