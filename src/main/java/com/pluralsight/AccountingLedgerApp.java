@@ -145,16 +145,19 @@ public class AccountingLedgerApp {
         }
     }
 
+    // loads and returns transactions from the ledger file or an empty list if the file doesn't exist
     private static List<Transactions> loadTransactions() {
         // create a list to hold transactions
         List<Transactions> transactions = new ArrayList<>();
-        // create a File object from the ledger path
+        // create a File object using the path to the ledger file
         File file = new File(ledgerFile);
+        // checking if the file does not exist
         if (!file.exists()) {
-            // return an empty list if file does not exist yet
+            // return an empty list if file does not exist yet (no transactions yet)
             return transactions;
         }
 
+        //  tries to open the ledger file for reading using the buffered reader
         try (BufferedReader buffReader = new BufferedReader(new FileReader(ledgerFile))) {
             String line;
             // used to skip the header line
@@ -172,12 +175,15 @@ public class AccountingLedgerApp {
 
                 // split the line into parts using the pipe character
                 String[] parts = line.split("\\|");
+                // checking if the line doesnt have exactly 5 parts - date, time, description, vendor, amount
                 if (parts.length != 5) {
                     // if the line doesn't have exactly 5 parts, it's not a valid transaction
                     System.out.println("Error: Invalid format in line - " + line);
+                    // skips line and moves onto next if the  line doesnt have exactly 5 parts
                     continue;
                 }
 
+                // try / catch method used for handling errors
                 try {
                     // parse date - converting string to a date object
                     LocalDate date = LocalDate.parse(parts[0].trim(), dateFormatter);
@@ -204,6 +210,7 @@ public class AccountingLedgerApp {
 
         // sort the transactions by date in descending order (most recent first)
         transactions.sort(Comparator.comparing(Transactions::getDate).reversed());
+        //  line returns the list of transactions, whether it is empty or contains data
         return transactions;
     }
 
@@ -218,6 +225,7 @@ public class AccountingLedgerApp {
         System.out.println("----------------------------------------------------");
         System.out.println("Date  |  Time  |  Description  |  Vendor  |  Amount  ");
         System.out.println("----------------------------------------------------");
+        // loop through each transaction in the 'transactions' list
         for (Transactions transaction : transactions) {
             // printing out the transaction data in the format above
             System.out.printf("%s|%s|%s|%s|%.2f%n",
@@ -308,7 +316,9 @@ public class AccountingLedgerApp {
     private static void displayReportsMenu() {
         // displays the reports menu options
         String reportChoice;
+        // keeps track of whether user wants to go back to ledger screen
         boolean backToLedger = false;
+        // continue showing the menu until the user chooses to go back to the ledger
         while (!backToLedger) {
             System.out.println("\nReports Menu:");
             System.out.println("-------------------------------------------");
@@ -322,7 +332,7 @@ public class AccountingLedgerApp {
             // get user input
             reportChoice = theScanner.nextLine().trim();
             System.out.println("-------------------------------------------");
-            try {
+            try { // starts the try block to attempt executing the following code
                 switch (reportChoice) {
                     case "1": // Month to Date Report
                         generateMonthToDateReport();
@@ -346,7 +356,7 @@ public class AccountingLedgerApp {
                         // handle invalid report option
                         System.out.println("Invalid report option. Please try again.");
                 }
-            } catch (Exception e) {
+            } catch (Exception e) { // catches any exception that occurs during code block, e = error that occurs in code block
                 System.out.println("An unexpected error occurred: " + e.getMessage());
                 System.out.println("Please try again.");
             }
@@ -411,8 +421,6 @@ public class AccountingLedgerApp {
         displayTransactions(previousYearTransactions);
     }
 
-
-    
     // searches for transactions by vendor and displays the results
     private static void searchByVendor() {
         System.out.print("Enter vendor name to search: ");
