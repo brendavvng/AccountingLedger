@@ -1,6 +1,6 @@
 <h1 align="center">Brenda's Accounting Ledger App</h1>
 
-This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
+This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu. Users can track deposits and payments, generate reports (month-to-date, year-to-date, etc.), and search by vendor. All transactions are saved to and loaded from a file.
 
 ### Home Screen
 
@@ -83,6 +83,8 @@ private static void generateMonthToDateReport() {
 
 
 <b><i>This line of code is interesting because it uses the Stream API in Java, which is a powerful way to process data in a very efficient and readable way.</b></i>
+
+The Java Stream API lets you process collections of data in a clean, functional way—like filtering, transforming, and summarizing—without writing explicit loops.
 
 ### *What Each Line of Code is Doing:*
 
