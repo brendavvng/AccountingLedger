@@ -84,6 +84,8 @@ private static void generateMonthToDateReport() {
 
 <b><i>This line of code is interesting because it uses the Stream API in Java, which is a powerful way to process data in a very efficient and readable way.</b></i>
 
+The Java Stream API lets you process collections of data in a clean, functional way—like filtering, transforming, and summarizing—without writing explicit loops.
+
 ### *What Each Line of Code is Doing:*
 
 - loadTransactions() loads all the transactions from a file. loadTransactions() simplifies your code by abstracting the data-fetching process, making it easier to maintain, update, and work with transaction data without worrying about where it comes from.
