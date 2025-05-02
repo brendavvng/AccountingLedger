@@ -1,6 +1,6 @@
 <h1 align="center">Brenda's Accounting Ledger App</h1>
 
-This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu.
+This is a simple accounting ledger application built in Java. It allows users to add, view, and manage financial transactions via a text-based menu. Users can track deposits and payments, generate reports (month-to-date, year-to-date, etc.), and search by vendor. All transactions are saved to and loaded from a file.
 
 ### Home Screen
 
